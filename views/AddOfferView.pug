@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1= 'Oferta'
+    form(action='/oferty', method='POST')
+        p
+            | Składający ofertę:
+            br
+            input(name='Owner', value='', type='text')
+            br
+            | Cena:
+            br
+            input(name='Price', value=0, min=0, type='number')
+            br
+            input(name='TenderId', value=tenderId, type='hidden')
+        input(value='Zatwierdź' type='submit')

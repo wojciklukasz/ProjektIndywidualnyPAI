@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    - const id = tender[0].Id;
+    - const name = tender[0].Name;
+    - const description = tender[0].Description;
+    - const owner = tender[0].Owner;
+    h1= name
+    p Zamawiający: #{owner}
+    br
+    p Opis:
+    p #{description}
+    br
+    br
+    p Oferty:
+    br
+    if offers.length > 0
+        table(style='width:100%')
+            tr
+                th Składający ofertę
+                th Cena
+            each offer in offers
+                tr
+                    td #{offer.Owner}
+                    td #{offer.Price}
+    else
+        h1 Przetarg nie został rozstrzygnięty

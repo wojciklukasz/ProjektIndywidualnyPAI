@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    h1= 'Ogłoś przetarg'
+    form(action='/przetargi', method='POST', id='tenderForm')
+        p
+            | Przedmiot przetargu:
+            br
+            input(name='Name', value='', type='text', required)
+            br
+            | Zgłaszający przetarg:
+            br
+            input(name='Owner', value='', type='text', required)
+            br
+            | Dzień i godzina rozpoczęcia przetargu:
+            br
+            input(name='StartDate', value='', type='datetime-local', required)
+            br
+            | Dzień i godzina zakończenia przetargu:
+            br
+            input(name='EndDate', value='', type='datetime-local', required)
+            br
+            | Budżet:
+            br
+            input(name='Budget', value=0, type='number', min=0, required)
+            br
+            | Opis przedmiotu przetargu:
+            br
+            input(name='Description', value='', type='text', style='width:50%', required)
+            br
+        input(value='Zatwierdź' type='submit')

@@ -1,0 +1,32 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #0a629d;
+  padding: 4px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+table,
+td {
+  border: 1px solid #333;
+}
+th{
+  border: 1px solid #333;
+}
+
+thead,
+tfoot {
+  background-color: #333;
+  color: #fff;
+}
+
+nav {
+  border-bottom: 1px solid black;
+  padding-bottom: 2px;
+}

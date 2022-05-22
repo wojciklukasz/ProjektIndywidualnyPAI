@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    - const id = tender[0].Id;
+    - const name = tender[0].Name;
+    - const description = tender[0].Description;
+    - const owner = tender[0].Owner;
+    h1= name
+    p Zamawiający: #{owner}
+    br
+    p Opis:
+    p #{description}
+    br
+    a(href='/oferty/' + id)
+        input(type='button' value='Złóż ofertę')

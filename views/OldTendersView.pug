@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    h1 Zakończone przetargi
+    table(style='width:100%')
+        tr
+            th Lp.
+            th Nazwa
+            th Rozpoczęty
+            th Zakończony
+        each tender in tenders
+            - const url = tender.Id;
+            - const start = new Date(tender.StartDate);
+            - const end = new Date(tender.EndDate);
+            tr
+                td #{tender.Id}
+                td
+                    a(href='/przetargi/zakonczone/' + url) #{tender.Name}
+                td #{start.getFullYear()}-#{(start.getMonth() < 9 ? '0' : '') + (start.getMonth() + 1)}-#{(start.getDate() < 10 ? '0' : '') + start.getDate()} #{start.getHours()}:#{(start.getMinutes() < 10 ? '0' : '') + start.getMinutes()}
+                td #{end.getFullYear()}-#{(end.getMonth() < 9 ? '0' : '') + (end.getMonth() + 1)}-#{(end.getDate() < 10 ? '0' : '') + end.getDate()} #{end.getHours()}:#{(end.getMinutes() < 10 ? '0' : '') + end.getMinutes()}
